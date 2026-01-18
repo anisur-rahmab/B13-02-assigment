@@ -27,6 +27,7 @@ html {
   overflow-x: hidden;
 }
 
+
 /* header style */
 .header {
   position: fixed;
@@ -40,7 +41,7 @@ html {
   align-items: center;
   justify-content: space-between;
   z-index: 100;
-  border-bottom: .1rem solid rgba(255, 255, 255, .1);
+  border-bottom: .1rem solid rgba(255, 255, 255, .2);
 }
 
 .logo {
@@ -130,7 +131,6 @@ html {
   width: 100%;
   min-height: calc(100vh - 70px);
   margin-top: 70px;
-  padding: 0 10%;
   background: url(./assets/hero-bg.png);
   background-repeat: no-repeat;
   background-size: cover;
@@ -218,23 +218,66 @@ html {
   box-shadow: 0 0 1rem var(--green-color);
 }
 
+/* podcast style */
+.podcast {
+  background: var(--bg-color);
+  padding: 10rem 10% 3rem;
+  margin-top: -3rem;
+}
 
+.podcast-content {
+  text-align: center;
+}
 
+.title {
+  font-size: 4rem;
+  font-weight: 700;
+  text-align: center;
+  margin-bottom: 2rem;
+}
 
+.podcast-content p {
+  text-align: center;
+  max-width: 75rem;
+  margin: 2rem auto;
+  font-size: 1.5rem;
+  font-weight: 200;
+  line-height: 2;
+}
 
+.podcast hr {
+  border-top: .1rem solid rgba(255, 255, 255, .1);
+  margin: 5rem 0;
+}
 
-@media screen and (max-width: 576px) {
-  html {
-    font-size: 75%;
-  }
+.podcast-box {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  gap: 5rem;
+  flex-wrap: wrap;
+}
 
-  .header {
-    padding: 2rem 5%;
-  }
+.podcast-box .podcast-items {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  padding: 2rem 3rem;
+}
 
-  .home {
-    padding: 0 5%;
-  }
+.podcast-items h1 {
+  font-size: 4rem;
+  font-weight: 900;
+  color: var(--green-color);
+  margin-bottom: 1rem;
+  letter-spacing: .2rem;
+}
+
+.podcast-items h5 {
+  font-size: 1.2rem;
+  font-weight: 200;
+  text-transform: uppercase;
 }
 
 
@@ -247,3 +290,20 @@ html {
 
 
 
+
+
+
+
+/* @media screen and (max-width: 576px) {
+  html {
+    font-size: 75%;
+  }
+
+  .header {
+    padding: 2rem 5%;
+  }
+
+  .home {
+    padding: 0 5%;
+  }
+} */
