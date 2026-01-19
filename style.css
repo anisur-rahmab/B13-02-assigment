@@ -348,7 +348,7 @@ section {
 }
 
 .episode-content h2 {
-  font-size: 2.2rem;
+  font-size: 2.1rem;
   margin: 0 0 1rem;
 }
 
@@ -547,39 +547,50 @@ section {
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-@media screen and (max-width: 576px) {
-  html {
-    font-size: 75%;
-  }
-
+/* BREACKPOINTS */
+@media screen and (max-width: 829px) {
   .header {
-    padding: 2rem 5%;
+    padding: 0 5%;
   }
 
-  .choose-box {
-    grid-template-areas: 
-    "choose-item-1"
-    "choose-item-2"
-    "choose-item-3"
-    "choose-item-4"
-    "choose-item-5";
+  section {
+    padding: 7rem 5% 5rem;
+  }
+
+  footer {
+    padding: 5rem 0;
   }
 
   .episodes-box {
     flex-wrap: wrap;
   }
 }
+
+@media screen and (max-width: 733px) {
+  .navbar {
+    display: none;
+  }
+
+  .nav-btn {
+    display: none;
+  }
+
+  #menu-icon {
+    display: block;
+  }
+
+  .footer-content .logo.footer {
+    font-size: 5rem;
+  }
+}
+
+
+
+
+
+
+
+
+
+
 
