@@ -54,6 +54,8 @@ section {
   font-size: 4rem;
   font-weight: 900;
   color: var(--white-color);
+  opacity: 0;
+  animation: slideTop 1s ease forwards;
 }
 
 .logo span {
@@ -63,10 +65,14 @@ section {
 }
 
 .navbar a {
+  display: inline-block;
   font-size: 1.6rem;
   font-weight: 500;
   color: var(--white-color);
   margin: 0 2.5rem;
+  opacity: 0;
+  animation: slideTop .5s ease forwards;
+  animation-delay: calc(.2s * var(--i));
 }
 
 .btn {
@@ -81,6 +87,9 @@ section {
   font-weight: 600;
   letter-spacing: .1rem;
   z-index: 1;
+  opacity: 0;
+  animation: slideTop 1s ease forwards;
+  animation-delay: calc(.2s * var(--i));
 }
 
 .btn i {
@@ -161,6 +170,9 @@ section {
   display: flex;
   align-items: center;
   justify-content: center;
+  opacity: 0;
+  animation: zoomIn 1.5s ease forwards, upDown 4s ease-in-out infinite;
+  animation-delay: 1.2s, 3s;
 }
 
 .img-box .badge {
@@ -189,11 +201,17 @@ section {
   font-size: 5.6rem;
   font-weight: 800;
   letter-spacing: .2rem;
+  opacity: 0;
+  animation: slideTop 1s ease forwards;
+  animation-delay: 1s;
 }
 
 .home-content p {
   font-size: 1.6rem;
   margin: 1rem 0 2.5rem;
+  opacity: 0;
+  animation: slideTop 1s ease forwards;
+  animation-delay: 1s;
 }
 
 .btn-box .btn {
@@ -260,7 +278,6 @@ section {
   align-items: center;
   justify-content: space-around;
   gap: 5rem;
-  flex-wrap: wrap;
 }
 
 .podcast-box .podcast-items {
@@ -268,7 +285,7 @@ section {
   align-items: center;
   justify-content: center;
   flex-direction: column;
-  padding: 2rem 3rem;
+  padding: 2rem 5rem;
 }
 
 .podcast-items h1 {
@@ -293,10 +310,10 @@ section {
 .choose-box {
   display: grid;
   gap: 2.5rem;
-  grid-template-areas: 
-  "choose-item-1 choose-item-2 choose-item-2"
-  "choose-item-1 choose-item-3 choose-item-3"
-  "choose-item-4 choose-item-4 choose-item-5";
+  grid-template-areas:
+    "choose-item-1 choose-item-2 choose-item-2"
+    "choose-item-1 choose-item-3 choose-item-3"
+    "choose-item-4 choose-item-4 choose-item-5";
 }
 
 
@@ -390,7 +407,7 @@ section {
   overflow: hidden;
 }
 
-.host-img .img-box::before, 
+.host-img .img-box::before,
 .host-img .img-box::after {
   content: '';
   position: absolute;
@@ -405,11 +422,7 @@ section {
   animation-delay: -5s;
 }
 
-@keyframes rotateBorder {
-  100% {
-    transform: rotate(360deg);
-  }
-}
+
 
 .host-img .img-box .img-item {
   position: relative;
@@ -450,7 +463,7 @@ section {
   justify-content: center;
   width: 40px;
   height: 40px;
-  background:  linear-gradient(45deg, #f06, #3cf, #f06);
+  background: linear-gradient(45deg, #f06, #3cf, #f06);
   border-radius: 50%;
   font-size: 2rem;
   color: var(--white-color);
@@ -468,7 +481,7 @@ section {
   position: absolute;
   width: 100%;
   height: 100%;
-  background:  linear-gradient(45deg, #f06, #3cf, #f06);
+  background: linear-gradient(45deg, #f06, #3cf, #f06);
   border-radius: 50%;
   z-index: -1;
   transition: .5s ease;
@@ -513,16 +526,24 @@ section {
   margin-bottom: 1rem;
 }
 
-.footer-content .logo.footer {
-  font-size: 7rem;
+.footer-box .footer-logo {
+  font-size: 6rem;
+  font-weight: 900;
+  color: var(--white-color);
 }
 
-.footer-item-box {
+.footer-content .footer-logo span {
+  background: linear-gradient(45deg, #f06, #3cf);
+  -webkit-text-fill-color: transparent;
+  -webkit-background-clip: text;
+}
+
+
+.footer-content .footer-item-box {
   display: flex;
   align-items: center;
   justify-content: center;
-  flex-wrap: wrap;
-  gap: 4rem;
+  gap: 2rem;
 }
 
 .footer-item-box .footer-item {
@@ -546,8 +567,87 @@ section {
 
 
 
+/* KEYFRAMES ANIMATION */
+@keyframes slideTop {
+  0% {
+    opacity: 0;
+    transform: translateY(100px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes zoomIn {
+  0% {
+    opacity: 0;
+    transform: scale(0);
+  }
+
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes upDown {
+  0% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-1.5rem);
+  }
+
+  100% {
+    transform: translateY(0);
+  }
+}
+
+
+
+@keyframes rotateBorder {
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+
 
 /* BREACKPOINTS */
+@media screen and (max-width: 1112px) {
+  html {
+    font-size: 58%;
+  }
+}
+
+@media screen and (max-width: 1054px) {
+  .episode-content h2 {
+    font-size: 1.6rem;
+  }
+
+  .episode-content p {
+    font-size: 1.3rem;
+  }
+
+  html {
+    font-size: 45%;
+  }
+}
+
+@media screen and (max-width: 902px) {
+  .episodes-box {
+    flex-wrap: wrap;
+  }
+
+  .episodes-box .episode-items {
+    width: 100%;
+  }
+
+}
+
 @media screen and (max-width: 829px) {
   .header {
     padding: 0 5%;
@@ -561,9 +661,17 @@ section {
     padding: 5rem 0;
   }
 
-  .episodes-box {
+  .host .host-box {
     flex-wrap: wrap;
+    justify-content: center;
+    text-align: center;
   }
+
+  .host-img .img-box {
+    width: 20vw;
+    height: 20vw;
+  }
+
 }
 
 @media screen and (max-width: 733px) {
@@ -579,18 +687,25 @@ section {
     display: block;
   }
 
+  .podcast-box {
+    flex-wrap: wrap;
+  }
+
+  .choose-box {
+    grid-template-areas:
+      "choose-item-1"
+      "choose-item-2"
+      "choose-item-3"
+      "choose-item-4"
+      "choose-item-5";
+  }
+
+  .footer-content .footer-item-box {
+    flex-wrap: wrap;
+  }
+
   .footer-content .logo.footer {
     font-size: 5rem;
   }
+
 }
-
-
-
-
-
-
-
-
-
-
-
