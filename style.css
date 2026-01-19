@@ -27,6 +27,10 @@ html {
   overflow-x: hidden;
 }
 
+section {
+  width: 100%;
+  padding: 7rem 10% 5rem;
+}
 
 /* header style */
 .header {
@@ -221,7 +225,6 @@ html {
 /* podcast style */
 .podcast {
   background: var(--bg-color);
-  padding: 10rem 10% 3rem;
   margin-top: -3rem;
 }
 
@@ -233,7 +236,7 @@ html {
   font-size: 4rem;
   font-weight: 700;
   text-align: center;
-  margin-bottom: 2rem;
+  margin-bottom: 4rem;
 }
 
 .podcast-content p {
@@ -280,6 +283,48 @@ html {
   text-transform: uppercase;
 }
 
+/* choose style */
+.choose {
+  background: var(--second-bg-color);
+  margin-top: -1rem;
+}
+
+.choose-box {
+  display: grid;
+  gap: 2.5rem;
+  grid-template-areas: 
+  "choose-item-1 choose-item-2 choose-item-2"
+  "choose-item-1 choose-item-3 choose-item-3"
+  "choose-item-4 choose-item-4 choose-item-5";
+}
+
+
+.choose-items {
+  background: #2A0F4D;
+  padding: 3rem;
+  border-radius: 3rem;
+}
+
+.choose-items:nth-child(1) {
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  text-align: left;
+  flex-direction: column;
+}
+
+.choose-items h3 {
+  font-size: 2rem;
+  margin: 1.5rem 0;
+}
+
+.choose-items p {
+  font-size: 1.4rem;
+  font-weight: 200;
+  line-height: 1.5;
+}
+
+/*  */
 
 
 
@@ -293,8 +338,7 @@ html {
 
 
 
-
-/* @media screen and (max-width: 576px) {
+@media screen and (max-width: 576px) {
   html {
     font-size: 75%;
   }
@@ -303,7 +347,12 @@ html {
     padding: 2rem 5%;
   }
 
-  .home {
-    padding: 0 5%;
+  .choose-box {
+    grid-template-areas: 
+    "choose-item-1"
+    "choose-item-2"
+    "choose-item-3"
+    "choose-item-4"
+    "choose-item-5";
   }
-} */
+}
